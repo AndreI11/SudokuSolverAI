@@ -5,9 +5,12 @@
 #include <istream>
 #include <fstream>
 #include <sstream>
-#include "SudokuFile.h"
+#include "SudokuBoard.h"
 
-sudoku_namespace::SudokuFile* readFile ( std::string InputFileName );
-bool readLine ( std::istream& inputFile,  sudoku_namespace::SudokuFile* sf, int lineNumber  );
+namespace sudoku_namespace
+{
+	sudoku_namespace::SudokuBoard* readFile ( std::string InputFileName );
+	bool readLine ( std::istream& inputFile,  sudoku_namespace::SudokuFile* sf, int lineNumber  );
+}
 
 #endif
