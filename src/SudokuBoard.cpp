@@ -78,7 +78,7 @@ void SudokuBoard::setQ( int new_q )
 		board = new_board;
 	}
 
-	//Wrote as a function in case we need to check it somehow later.
+	//Wrote as a function in case we need to change it somehow later.
 	bool SudokuBoard::checkNpq(){
 		return p * q == N;
 	}
