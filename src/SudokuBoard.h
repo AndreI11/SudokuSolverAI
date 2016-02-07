@@ -21,7 +21,7 @@ namespace sudoku_namespace
 		void setP( int p );
 		void setQ( int q );
 		void setN( int n );
-		void setBoard( int** board );
+		void setBoard( int** board);
 			
 		// operators
 		friend std::istream &operator>>( std::istream &source, SudokuBoard &dest );

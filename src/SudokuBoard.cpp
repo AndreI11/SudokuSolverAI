@@ -1,5 +1,6 @@
 #include <string>
 #include <stdexcept>
+#include "Odometer.h"
 #include "SudokuBoard.h"
 
 using namespace std;
@@ -25,6 +26,7 @@ namespace sudoku_namespace
 		p = new_p;
 		q = new_q;
 	}
+
 	int SudokuBoard::getP( void ) const
 	{
 		return p;
@@ -65,7 +67,8 @@ namespace sudoku_namespace
 	}
 
 	//Wrote as a function in case we need to change it somehow later.
-	bool SudokuBoard::checkNpq(){
+	bool SudokuBoard::checkNpq()
+	{
 		return p * q == N;
 	}
 
@@ -79,19 +82,29 @@ namespace sudoku_namespace
 	{
 		int** board = source.getBoard();
 		int board_size = source.getN();
-
+		Odometer odo;
 		dest << to_string(source.getN()) + " " + to_string(source.getQ()) + " " + to_string(source.getP()) + "\n";
 		
-		for (int row = 0; row < board_size; row++){
-			
-			for (int col = 0; col < board_size; col++ ){	
-				int board_val = board[row][col];
+		for (int row = 0; row < board_size; row++)
+		{
+			for (int col = 0; col < board_size; col++ )
+			{
 				
-				if (board_val > 9){
+				int board_val = board[row][col];
+				string to_add = to_string(board_val);
 
+				if (board_val > 9){
+					to_add = odo.intToOdometer(board_val);
 				}
 
+				if(col != board_size-1){
+					dest << to_add + "|";
+				}
+				else{
+					dest << to_add + "\n";
+				}
 			}
+	
 		} 
 
 		return dest;
