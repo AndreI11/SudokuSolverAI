@@ -47,29 +47,16 @@ namespace sudoku_namespace
 	}
 
 void SudokuBoard::setN( int new_N ){
-	if ( !checkNpq() ){
-			throw invalid_argument("Setting of N invalidates N = p * q");
-		}
-
 		N = new_N;
 	}
 
 void SudokuBoard::setP( int new_p )
 	{
-		if ( !checkNpq() ){
-			throw invalid_argument("Setting of p invalidates N = p * q");
-		}
-
 		p = new_p;
-
 	}
 
 void SudokuBoard::setQ( int new_q )
 	{
-		if ( !checkNpq() ){
-			throw invalid_argument("Setting of q invalidates N = p * q");
-		}
-
 		q = new_q;
 	}
 
@@ -83,6 +70,7 @@ void SudokuBoard::setQ( int new_q )
 		return p * q == N;
 	}
 
+
 	std::istream &operator>>( std::istream &source, SudokuBoard &dest )
 	{
 
@@ -90,6 +78,7 @@ void SudokuBoard::setQ( int new_q )
 
 	std::ostream &operator<<( std::ostream &dest, const SudokuBoard &source )
 	{
+		os << 
 
 	}
 
