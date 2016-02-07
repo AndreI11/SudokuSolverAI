@@ -1,5 +1,9 @@
 #include <iostream>
 
-int main(){
-	std::cout << "Hello world!";
+int main(int argc, char* argv[])
+{
+	// Load Sudoku File
+	// Solve Sudoku Puzzle
+	// Publish Results
+	return 0;
 }
