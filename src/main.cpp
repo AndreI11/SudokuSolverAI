@@ -1,7 +1,5 @@
 #include <iostream>
-#include "Tools.h"
 using namespace std;
-using namespace tools;
 
 int main( int argc, char* argv[] )
 {
@@ -14,7 +12,6 @@ int main( int argc, char* argv[] )
 	string OutputFileName = argv[2];
 	int timeout = 1000*atoi(argv[3]);
 
-	pause();
 	// Load Sudoku File
 	// Solve Sudoku Puzzle
 	// Publish Results
