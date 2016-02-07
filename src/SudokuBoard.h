@@ -9,7 +9,7 @@ namespace sudoku_namespace
 	public:
 		// Constructors
 		SudokuBoard( void );
-		SudokuBoard( int N, int p, int q, int ** board );
+		SudokuBoard( int N, int p, int q );
 
 		// Information
 		int getP( void ) const;

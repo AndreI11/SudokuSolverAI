@@ -15,7 +15,7 @@ namespace sudoku_namespace
 		//do something with board
 	}
 
-	SudokuBoard::SudokuBoard( int new_N, int new_p, int new_q, int ** new_board )
+	SudokuBoard::SudokuBoard( int new_N, int new_p, int new_q)
 	{
 		if ( !checkNpq() ){
 			throw std::invalid_argument("Setting of N,p,q invalidates N = p * q");
@@ -24,9 +24,7 @@ namespace sudoku_namespace
 		N = new_N;
 		p = new_p;
 		q = new_q;
-		setBoard( new_board );
 	}
-
 	int SudokuBoard::getP( void ) const
 	{
 		return p;
@@ -63,12 +61,11 @@ namespace sudoku_namespace
 
 	void SudokuBoard::setBoard( int** new_board )
 	{
-		board = new_board;//Doesn't work
+		board = new_board;
 	}
 
 	//Wrote as a function in case we need to change it somehow later.
-	bool SudokuBoard::checkNpq()
-	{
+	bool SudokuBoard::checkNpq(){
 		return p * q == N;
 	}
 
@@ -80,7 +77,28 @@ namespace sudoku_namespace
 
 	std::ostream &operator<<( std::ostream &dest, const SudokuBoard &source )
 	{
-		os << 
+		int** board = source.getBoard();
+		int board_size = source.getN();
+
+		dest << to_string(source.getN()) + " " + to_string(source.getQ()) + " " + to_string(source.getP()) + "\n";
+		
+		for (int row = 0; row < board_size; row++){
+			
+			for (int col = 0; col < board_size; col++ ){	
+				int board_val = board[row][col];
+				
+				if (board_val > 9){
+
+				}
+
+			}
+		} 
+
+		return dest;
 	}
 
 }
+
+
+
+

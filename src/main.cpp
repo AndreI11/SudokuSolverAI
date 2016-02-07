@@ -1,8 +1,12 @@
 #include <iostream>
+#include "Odometer.h"
+#include "SudokuBoard.h"
 using namespace std;
+using namespace sudoku_namespace;
 
 int main( int argc, char* argv[] )
 {
+	
 	if ( argc < 4 )
 	{
 		cout << "Invalid number of arguments. Must include input file name, output file name, and timeout.";
@@ -15,5 +19,8 @@ int main( int argc, char* argv[] )
 	// Load Sudoku File
 	// Solve Sudoku Puzzle
 	// Publish Results
+	
+
 	return 0;
+
 }
