@@ -26,6 +26,7 @@ namespace sudoku_namespace
 		q = new_q;
 		setBoard( new_board );
 	}
+
 	int SudokuBoard::getP( void ) const
 	{
 		return p;
@@ -46,27 +47,28 @@ namespace sudoku_namespace
 		return board;
 	}
 
-void SudokuBoard::setN( int new_N ){
+	void SudokuBoard::setN( int new_N ){
 		N = new_N;
 	}
 
-void SudokuBoard::setP( int new_p )
+	void SudokuBoard::setP( int new_p )
 	{
 		p = new_p;
 	}
 
-void SudokuBoard::setQ( int new_q )
+	void SudokuBoard::setQ( int new_q )
 	{
 		q = new_q;
 	}
 
 	void SudokuBoard::setBoard( int** new_board )
 	{
-		board = new_board;
+		board = new_board;//Doesn't work
 	}
 
 	//Wrote as a function in case we need to change it somehow later.
-	bool SudokuBoard::checkNpq(){
+	bool SudokuBoard::checkNpq()
+	{
 		return p * q == N;
 	}
 
@@ -79,7 +81,6 @@ void SudokuBoard::setQ( int new_q )
 	std::ostream &operator<<( std::ostream &dest, const SudokuBoard &source )
 	{
 		os << 
-
 	}
 
 }
