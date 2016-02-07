@@ -1,15 +1,15 @@
-#ifndef SUDOKUFILE_H
-#define SUDOKUFILE_H
+#ifndef SUDOKUBOARD_H
+#define SUDOKUBOARD_H
 
 namespace sudoku_namespace
 {
-	class SudokuFile
+	class SudokuBoard
 	{
 
 	public:
 		// Constructors
-		SudokuFile( void );
-		SudokuFile( int N, int p, int q, int ** board );
+		SudokuBoard( void );
+		SudokuBoard( int N, int p, int q, int ** board );
 
 		// Information
 		int getP( void ) const;
@@ -24,14 +24,15 @@ namespace sudoku_namespace
 		void setBoard( int** board );
 			
 		// operators
-		friend std::istream &operator>>( std::istream &source, SudokuFile &dest );
-		friend std::ostream &operator<<( std::ostream &dest, const SudokuFile &source );
+		friend std::istream &operator>>( std::istream &source, SudokuBoard &dest );
+		friend std::ostream &operator<<( std::ostream &dest, const SudokuBoard &source );
 
 	private:
 		int p;
 		int q;
 		int N;
 		int** board;
+		bool checkNpq();
 
 	};
 }
